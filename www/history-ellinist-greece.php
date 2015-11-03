@@ -1,56 +1,19 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 	<title>Стародавня Греція</title>
-	<link type"text/css" rel="stylesheet" href="style.css" />
-	<style type='text/css'>
-	#section1 {
-		background: #F1FFDF;
-		opacity: 0.95;
-		position: absolute;
-		top: 120px;
-		margin: 10px;
-		width: 1170px;
-		padding: 30px 80px 30px 80px;
-		border-radius: 30px;
-	}
-	footer{
-	z-index: 100;
-	background: #f29f4b;
-	position: absolute;
-	top:750px;
-	bottom: 0px;
-	width: 100%;
-	height:80px;
-	opacity: 0.80;
-	border-top-left-radius: 30px; 
-	border-top-right-radius: 30px;
-	}
-	</style>
+	<link type"text/css" rel="stylesheet" href="/css/style.css" />
+	<link type"text/css" rel="stylesheet" href="/css/style-section.css" >
 </head>
+
 <body>
-	<header>
-	<a href='index.html'><img src='logo.jpg' id='logo' width = 100px height = 100px alt='logo' /></a>
-		<ul id='menu'>
-			<li><a href="osob.html">Особистості</a>
-			<ul>
-			 <li><a href="osob.html#Mnesikl">Мнесікл</a></li>
-			 <li><a href="osob.html#Iktin">Іктін</a></li>
-			 <li><a href="osob.html#pasha">Каллікрат</a></li>
-			 <li><a href="osob.html#fidii">Фідій</a></li>
-			</ul>
-			</li>
-			<li><a href="arh.html">Архітектура</a></li>
-			<li><a href="history.html">Історія</a></li>
-			<li><a href="mist.html">Мистецтво</a></li>
-			<li><a href="auth.html">Реєстрація</a></li>
-		</ul>
-	</header>
-	<section id='section1'>
-	 <center><p id="Iktin"><h2><strong><em>Еліністична Греція</em></strong></h2></p></center>
-	<p align="justify">Після смерті Александра Великого розпочався період загальної смути, чвар між його діадохами і власне розпаду імперії Александра,
-	нашвидку складеної та недорозбудованої. Ефемерними виявились і дуже багато міст та поселень, 
+	<section id="section1">
+		<h2>Еліністична Греція</h2>
+		<p>
+			Після смерті Александра Великого розпочався період загальної смути, чвар між його діадохами і власне розпаду імперії Александра, нашвидку складеної та недорозбудованої. Ефемерними виявились і дуже багато міст та поселень, 
 	заснованих завойовником з метою закріплення за собою придбаних війною далеких земель. 
 	Відчувався і брак заповіту Александра, який перейшов би від ньго його наступникам. 
 	В Елладі смерть Александра викликала, так звану, Ламійскую війну, що скінчилась битвою при Кранноні,
@@ -66,12 +29,16 @@
 	Космополітизм став відмінною рисою творів грецького розуму. В цей же час почався формуватися переважно на чужині той тип грека (лат. Graeculus),
 	жебрака та паразита, майстра на всі руки, який увічнений сатирою Ювенала. Незважаючи на виснаження і деморалізацію,
 	внаслідок відпливу населення в далекі країни, на необхідність пристосовуватися до вимог деспотів і багатіїв, 
-	старі цивільні чесноти продовжували жити серед греків, менше порушених новим порядком речей.</p>
- 			<p align= "center"><a href="ArhaichnaGreece.html"><img src="back.jpg" /></a>
-			<a href="ClassickGreece.html"><img src="forth.jpg" /></a></p>
-		</section>
-		  <footer>
-            <p align = "center"> © Copyright @ 2015  Vladislav Samusenko. Kyiv. NTUU "KPI" </p>
-        </footer>
-	</body>
-	</html>
+	старі цивільні чесноти продовжували жити серед греків, менше порушених новим порядком речей.
+		</p>
+		<div class="arrows">
+			<a href="/history-arhaichna-greece.php"><img src="/img/back.jpg" ></a>
+			<a href="/history-classick-greece.php"><img src="/img/forth.jpg" ></a>
+		</div>
+	</section>
+
+	<?php include('parts/header.php'); ?>
+	<?php include('parts/footer.php'); ?>
+</body>
+
+</html>

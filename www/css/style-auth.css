@@ -1,0 +1,22 @@
+
+#table1{
+	margin: 0 auto 8px;
+	width: 500px;
+}
+
+#table1 dt{
+	clear: left;
+	float: left;
+	line-height: 200%;
+	text-align: right;
+	width: 240px;
+}
+#table1 dd{
+	margin-left: 244px;
+	line-height: 200%;
+	position: relative;
+}
+#section1 div:last-child{
+	clear: left;
+	text-align: center;
+}
