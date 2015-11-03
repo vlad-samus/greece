@@ -1,0 +1,72 @@
+html, body{
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: fixed #999 url("/img/titul.jpg") center top no-repeat;
+	background-size: 100%;
+	color: #000;
+	font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+	opacity: 0.95;
+}
+
+a#logo {
+	position: absolute;
+	margin-left: 16px;
+	margin-top: 1px;
+}
+a#logo img{
+	width: 100px;
+}
+
+a{
+	text-decoration: none;
+	color: #2b1921;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+header {
+	background-color: #f29f4b;
+	font-size: 13pt;
+	height: 102px;
+	overflow: hidden;
+	opacity: 0.80;
+	border-radius: 0 0 30px 30px;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;   
+}
+
+#menu {
+	border: 1px red solid;
+	display: block;
+	position: absolute;
+	top: 25px;
+	right: 20px;
+}
+#menu > li{
+	display: table-cell;
+	float: left;
+}
+#menu > li > a{
+	display: inline-block;
+	padding: 20px 30px 30px 30px;
+}
+#menu > li > ul{
+	display: none;
+	background: #f29f4b;
+	position: absolute;
+	top: 100%;
+	opacity: 0.99;
+	width: 200px;
+	padding: 20px 20px 20px 20px ;
+}
+#menu > li:hover > ul {
+	display: block;
+	width: 200px;
+}
