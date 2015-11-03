@@ -1,53 +1,20 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 	<title>Стародавня Греція</title>
-	<link type"text/css" rel="stylesheet" href="style.css" />
-	<style type='text/css'>
-	#section1 {
-		background: #F1FFDF;
-		position: absolute;
-		top: 150px;
-		padding: 30px 80px 30px 80px;
-		border-radius: 30px;
-		opacity:0.95;
-	}
-	footer{
-	z-index: 100;
-	background: #f29f4b;
-	position: absolute;
-	top:700px;
-	bottom: 0px;
-	width: 100%;
-	height:100px;
-	border-top-left-radius: 30px; 
-	border-top-right-radius: 30px;
-	opacity:0.80;
-	}
-	</style>
+	<link type"text/css" rel="stylesheet" href="/css/style.css" />
+	<link type"text/css" rel="stylesheet" href="/css/style-section.css" >
+
 </head>
+
 <body>
-	<header>
-	<a href='index.html'><img src='logo.jpg' id='logo' width = 100px height = 100px alt='logo' /></a>
-		<ul id='menu'>
-			<li><a href="osob.html">Особистості</a>
-			<ul>
-			 <li><a href="osob.html#Mnesikl">Мнесікл</a></li>
-			 <li><a href="osob.html#Iktin">Іктін</a></li>
-			 <li><a href="osob.html#pasha">Каллікрат</a></li>
-			 <li><a href="osob.html#fidii">Фідій</a></li>
-			</ul>
-			</li>
-			<li><a href="arh.html">Архітектура</a></li>
-			<li><a href="history.html">Історія</a></li>
-			<li><a href="mist.html">Мистецтво</a></li>
-			<li><a href="auth.html">Реєстрація</a></li>
-		</ul>
-	</header>
-	<section id='section1'>
-	 <center><p id="Iktin"><h2><strong><em>Класична Греція</em></strong></h2></p></center>
-	<p align="justify">Давньогрецьке мистецтво класичного періоду Греції прийнято ділити на наступні етапи:
+	<section id="section1">
+		<h2>Класична Греція</h2>
+		<p>
+			Давньогрецьке мистецтво класичного періоду Греції прийнято ділити на наступні етапи:
 	раннє — «суворий стиль», перша половина 5 століття до н. е.);
 	високе — висока класика, друга половина 5 століття до 
 	В період класики отримала розвиток регулярна система планування міст (архітектор Гіпподам),
@@ -63,12 +30,16 @@
 	Трагедії Есхіла відзначаються титанічною силою своїх образів і визвольними ідеями, оскільки поет жив у складний період боротьби в Афінах з тиранією.
 	До нас дійшли тільки деякі з творів поета. Найвідоміша трагедія Есхіла — «Прометей закутий», стала класикою не тільки давньогрецької, 
 	але й світової літератури. Визнаним комедіографом був Арістофан (445—385 до н. е.).
-	Зміст його комедій становить справжню енциклопедію тогочасного грецького життя («Мир», «Жінки в народних зборах», «Жаби» та ін.).</p>
-	<p align= "center"><a href="EllinistGreece.html"><img src="back.jpg" /></a>
-	<a href="ClassickGreece.html"><img src="forth.jpg" /></a></p>
-	 </section>
-		  <footer>
-            <p align = "center"> © Copyright @ 2015  Vladislav Samusenko. Kyiv. NTUU "KPI" </p>
-        </footer>
-	</body>
-	</html>
+	Зміст його комедій становить справжню енциклопедію тогочасного грецького життя («Мир», «Жінки в народних зборах», «Жаби» та ін.).
+		</p>
+		<div class="arrows">
+			<a href="/history-ellinist-greece.php"><img src="/img/back.jpg" ></a>
+			<a href="/history.php"><img src="/img/forth.jpg" ></a>
+		</div>
+	</section>
+
+	<?php include('parts/header.php'); ?>
+	<?php include('parts/footer.php'); ?>
+</body>
+
+</html>

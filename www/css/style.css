@@ -104,17 +104,17 @@ div.image.left, div.image.right{
 	clear: both;
 	background-color: #f29f4b; 
 	border-radius: 8px;
-	margin: 0;
+	margin: 8px 16px;
 	padding: 12px 16px;
 	text-align: center;
 }
 div.image.left{
 	float: left;
-	margin-right: 16px;
+	margin-left: 0;
 }
 div.image.right{
 	float: right;
-	margin-left: 16px;
+	margin-right: 0;
 }
 div.image.left img, div.image.right img{
 	display: block;

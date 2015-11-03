@@ -1,58 +1,19 @@
+
 <!DOCTYPE html>
 <html>
-	<head>
-	<meta charset="utf-8">
-	<title>Стародавня Греція</title>
-	<link type"text/css" rel="stylesheet" href="style.css" />
-   <style type='text/css'>
 
-	#section1 {
-		background: #F1FFDF;
-		position: absolute;
-		top: 100px;
-		margin: 5px;
-		padding: 30px 30px 30px 30px;
-		opacity:0.95;
-		border-bottom-left-radius: 30px;
-		border-bottom-right-radius: 30px;
-		border-top-left-radius: 30px; 
-		border-top-right-radius: 30px;
-	}
-	footer{
-	z-index: 100;
-	background: #f29f4b;
-	position: absolute;
-	top:649px;
-	bottom: 0px;
-	width: 100%;
-	height:100px;
-	opacity: 0.80;
-	border-top-left-radius: 30px; 
-	border-top-right-radius: 30px;
-	}
-	</style>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>Стародавня Греція</title>
+	<link type"text/css" rel="stylesheet" href="/css/style.css" />
+	<link type"text/css" rel="stylesheet" href="/css/style-section.css" >
 </head>
+
 <body>
-	<header>
-	<a href='index.html'><img src='logo.jpg' id='logo' width = 100px height = 100px alt='logo' /></a>
-		<ul id='menu'>
-			<li><a href="osob.html">Особистості</a>
-			<ul>
-			 <li><a href="osob.html#Mnesikl">Мнесікл</a></li>
-			 <li><a href="osob.html#Iktin">Іктін</a></li>
-			 <li><a href="osob.html#pasha">Каллікрат</a></li>
-			 <li><a href="osob.html#fidii">Фідій</a></li>
-			</ul>
-			</li>
-			<li><a href="arh.html">Архітектура</a></li>
-			<li><a href="history.html">Історія</a></li>
-			<li><a href="mist.html">Мистецтво</a></li>
-			<li><a href="auth.html">Реєстрація</a></li>
-		</ul>
-	</header>
 	<section id="section1">
-		  <center><p id="Iktin"><h2><strong><em>Архаїчна Греція</em></strong></h2></p></center>
-			<p align="justify">Мікенська Греція була розділена на царства, населення кожного з яких мешкало у містах та великих передмістях, що належали знаті. Царствами правили царі, що претендували на божественне походження, правили зі 
+		<h2>Архаїчна Греція</h2>
+		<p>
+			Мікенська Греція була розділена на царства, населення кожного з яких мешкало у містах та великих передмістях, що належали знаті. Царствами правили царі, що претендували на божественне походження, правили зі 
 			столиць — «полісів», в яких знаходилися палаци або цитаделі-акрополі («високі міста»),
 			які для цілей ефективної оборони зводилися на найбільш високих в даній місцевості пагорбах. Протягом «темних століть» палаци, царі і садиби
 			припинили своє існування, населення полісів зменшилося, міста були покинуті або перетворилися на дрібні поселення серед руїн, 
@@ -75,12 +36,16 @@
 			пам'ять про яких зберігалася суспільством. Натомість виникла нова організація:
 			багато великих населених пунктів стали автономними, на чолі з урядом республіканського типу.
 			Цей процес позначає давньогрецький термін сінойкізм, що означає поглинання сіл і включення племенних структур до складу полісів. 
-			Типовою публічною будівлею при цьому стає акрополь.</p>
-			<p align= "center"><a href="history.html"><img src="back.jpg" /></a>
-			<a href="EllinistGreece.html"><img src="forth.jpg" /></a></p>
-	 </section>
-	 <footer>
-            <p align = "center"> © Copyright @ 2015  Vladislav Samusenko. Kyiv. NTUU "KPI" </p>
-        </footer>
-	</body>
-	</html>
+			Типовою публічною будівлею при цьому стає акрополь.
+		</p>
+		<div class="arrows">
+			<a href="/history.php"><img src="/img/back.jpg" ></a>
+			<a href="/history-ellinist-greece.php"><img src="/img/forth.jpg" ></a>
+		</div>
+	</section>
+
+	<?php include('parts/header.php'); ?>
+	<?php include('parts/footer.php'); ?>
+</body>
+
+</html>
