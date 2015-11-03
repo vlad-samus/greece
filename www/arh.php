@@ -11,17 +11,13 @@
 
 <body>
 	<section id="section1">
-		<table width="100%" border="1">
-	  	<tr>
-				<th bgcolor="#F1FFDF" align="center">
-					<a href="/arh-afini.php" style="text-decoration: none"><p><h3><strong>Афіни</strong></h3></p></a>
-					<a href="/Saloniki.html" style="text-decoration: none"><p><h3><strong>Салоніки<h3></strong></p></a>
-					<a href="/Sparta.html" style="text-decoration: none"><p><h3><strong>Спарта</h3></strong></p></a>
-					<a href="/Iraklion.html" style="text-decoration: none"><p><h3><strong>Іракліон</h3></strong></p></a>
-					<a href="/Fivi.html" style="text-decoration: none"><p><h3><strong>Фіви</h3></strong></p></a>
-				</th>
-			</tr>
-		</table>
+		<div style="border: 1px solid gray; border-radius: 8px; text-align: center;">
+			<h3><a href="/arh-afini.php">Афіни</a></h3>
+			<h3><a href="/arh-saloniki.html">Салоніки</a></h3>
+			<h3><a href="/arh-sparta.html">Спарта</a></h3>
+			<h3><a href="/arh-iraklion.html">Іракліон</a></h3>
+			<h3><a href="/arh-fivi.html">Фіви</a></h3>
+		</div>
 	</section>
 
 	<?php include('parts/header.php'); ?>

@@ -69,7 +69,6 @@ ul, li{
 }
 
 #menu{
-	border: 1px red solid;
 	display: block;
 	position: absolute;
 	top: 25px;
