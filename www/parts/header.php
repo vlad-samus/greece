@@ -1,4 +1,4 @@
-
+﻿
 <header>
 	<a href="/" id="logo"><img src="/img/logo.png" alt="logo" ></a>
 	<ul id="menu">
