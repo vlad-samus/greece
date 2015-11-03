@@ -41,3 +41,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+access-www.l.log
+
+error-www.l.log
+
+rewrite-www.l.log

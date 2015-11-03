@@ -1,0 +1,44 @@
+
+body{
+	padding: 0;
+}
+
+form.login{
+	background-color: #eee;
+	border-radius: 8px;
+	margin: 8px auto 16px;
+	padding: 16px 24px;
+	width: 300px;
+}
+form.login dl{
+	margin: 0;
+	padding: 0;
+}
+form.login a{
+	font-size: small;
+}
+form.login dt{
+	clear: left;
+	float: left;
+	line-height: 150%;
+	text-align: right;
+	width: 49%;
+}
+form.login dd{
+	margin-left: 51%;
+	line-height: 150%;
+	position: relative;
+	text-align: left;
+}
+form.login div{
+	clear: left;
+	text-align: center;
+}
+
+div.p-map{
+	text-align: center;
+}
+div.p-map img{
+	border-radius: 24px;
+	opacity: 0.95;
+}

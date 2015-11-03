@@ -1,8 +1,13 @@
+
 html, body{
 	margin: 0;
 	padding: 0;
+	min-height: 100%;
 }
-body {
+html{
+	position: relative;
+}
+body{
 	background: fixed #999 url("/img/titul.jpg") center top no-repeat;
 	background-size: 100%;
 	color: #000;
@@ -10,7 +15,7 @@ body {
 	opacity: 0.95;
 }
 
-a#logo {
+a#logo{
 	position: absolute;
 	margin-left: 16px;
 	margin-top: 1px;
@@ -27,22 +32,43 @@ a:hover{
 	text-decoration: underline;
 }
 
-header {
+body{
+	padding-top: 102px;
+	padding-bottom: 32px;
+}
+header{
 	background-color: #f29f4b;
+	border-radius: 0 0 32px 32px;
 	font-size: 13pt;
 	height: 102px;
-	overflow: hidden;
 	opacity: 0.80;
-	border-radius: 0 0 30px 30px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+footer{
+	background: #f29f4b;
+	border-radius: 32px 32px 0 0;
+	bottom: 0px;
+	height: 16px;
+	opacity: 0.80;
+	padding: 8px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
 }
 
-ul, li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;   
+p{
+	text-align: justify;
 }
 
-#menu {
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;   
+}
+
+#menu{
 	border: 1px red solid;
 	display: block;
 	position: absolute;
@@ -66,7 +92,32 @@ ul, li {
 	width: 200px;
 	padding: 20px 20px 20px 20px ;
 }
-#menu > li:hover > ul {
+#menu > li:hover > ul{
 	display: block;
 	width: 200px;
+}
+
+div.noimage{
+	clear: both;
+}
+div.image.left, div.image.right{
+	clear: both;
+	background-color: #f29f4b; 
+	border-radius: 8px;
+	margin: 0;
+	padding: 12px 16px;
+	text-align: center;
+}
+div.image.left{
+	float: left;
+	margin-right: 16px;
+}
+div.image.right{
+	float: right;
+	margin-left: 16px;
+}
+div.image.left img, div.image.right img{
+	display: block;
+	margin-bottom: 4px;
+	opacity: 0.9;
 }

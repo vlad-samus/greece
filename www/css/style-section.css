@@ -1,0 +1,16 @@
+
+#section1{
+	background: #F1FFDF;
+	border-radius: 32px;
+	margin: 16px;
+	min-height: 200px;
+	opacity: 0.95;
+	overflow: hidden;
+	padding: 32px;
+	position: relative;
+}
+
+h2{
+	font-weight: bold;
+	text-align: center;
+}
