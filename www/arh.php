@@ -1,4 +1,5 @@
-﻿
+<?php require_once('php/init.php'); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,6 +8,7 @@
 	<title>Стародавня Греція</title>
 	<link type"text/css" rel="stylesheet" href="/css/style.css" >
 	<link type"text/css" rel="stylesheet" href="/css/style-section.css" >
+	<link type"text/css" rel="stylesheet" href="/css/style-comments.css" >
 </head>
 
 <body>
@@ -18,6 +20,7 @@
 			<h3><a href="/arh-iraklion.html">Іракліон</a></h3>
 			<h3><a href="/arh-fivi.html">Фіви</a></h3>
 		</div>
+		<?php include('parts/comments.php'); ?>
 	</section>
 
 	<?php include('parts/header.php'); ?>
@@ -25,3 +28,5 @@
 </body>
 
 </html>
+
+<?php require_once('php/uninit.php'); ?>

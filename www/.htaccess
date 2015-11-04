@@ -1,0 +1,2 @@
+RedirectMatch  ^/parts/.*$  /
+RedirectMatch  ^/php/.*$  /

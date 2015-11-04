@@ -1,5 +1,6 @@
-﻿
+
 <header>
+	<?php include('parts/tool-bar.php'); ?>
 	<a href="/" id="logo"><img src="/img/logo.png" alt="logo" ></a>
 	<ul id="menu">
 		<li><a href="/osob.php">Особистості</a>

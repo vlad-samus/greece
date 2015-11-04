@@ -1,4 +1,5 @@
-﻿
+<?php require_once('php/init.php'); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,17 +12,7 @@
 
 <body>
 	<section>
-		<form method="post" action="" class="login">
-			<dl>
-				<dt>Логін:</dt>
-				<dd><input required="required" size="16" type="text" placeholder="Логін" ></dd>
-				<dt>Пароль:</dt>
-				<dd><input required="required" size="16" type="password" placeholder="Пароль" ></dd>
-				<dt><a href="/auth.html">Зареєструватися</a></dt>
-				<dd><a href="/auth.html">Забули пароль?</a></dd>
-			</dl>
-			<div><input type="submit" value=" Ok "></div>
-		</form>
+		<div><?php include('parts/form-login.php'); ?></div>
 		<div class="p-map">
 			<img src="/img/Карта.jpg" usemap="#map" alt="Мапа" >
 			<map name="map" id="map">
@@ -35,3 +26,5 @@
 </body>
 
 </html>
+
+<?php require_once('php/uninit.php'); ?>
