@@ -1,4 +1,5 @@
-﻿
+<?php require_once('php/init.php'); ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -57,3 +58,5 @@
 </body>
 
 </html>
+
+<?php require_once('php/init.php'); ?>

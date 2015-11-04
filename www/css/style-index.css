@@ -1,4 +1,4 @@
-﻿
+
 body{
 	padding: 0;
 }
@@ -6,7 +6,7 @@ body{
 form.login{
 	background-color: #eee;
 	border-radius: 8px;
-	margin: 8px auto 16px;
+	margin: 8px auto 8px;
 	padding: 16px 24px;
 	width: 300px;
 }
@@ -36,6 +36,8 @@ form.login div{
 }
 
 div.p-map{
+	clear: both;
+	margin-top: 8px;
 	text-align: center;
 }
 div.p-map img{
