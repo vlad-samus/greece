@@ -9,6 +9,7 @@ if(!empty($USER) &&
 	!empty($comment) &&
 	array_key_exists($comment, $comments))
 {
+	$comments[$comment] = null;
 	unset($comments[$comment]);
 	commentsExport($fileCommentsBase, $comments);
 	header("HTTP/1.1 302 Redirect");
