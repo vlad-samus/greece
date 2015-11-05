@@ -13,10 +13,10 @@ function usersImport($path){
 			'email' => '',
 			'admin' => true,
 			'banned' => false,
-			'data' => userData(array())
+			'data' => userData([])
 		);		
 	}
-	else $users = array();
+	else $users = [];
 	return $users;
 };
 
@@ -41,7 +41,7 @@ function commentsImport($path){
 	if(file_exists($path)){
 		$comments = unserialize(file_get_contents($path));
 	}
-	else $comments = array();
+	else $comments = [];
 	return $comments;
 };
 
