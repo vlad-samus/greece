@@ -1,6 +1,6 @@
 <?php
 
-require_once('php/init.php');
+require_once('../php/init.php');
 $login = @strtolower($_GET['login']);
 if(!empty($USER) &&
 	($USERS[$USER]['banned']==false) &&
@@ -8,9 +8,10 @@ if(!empty($USER) &&
 	!empty($login) &&
 	array_key_exists($login, $USERS))
 {
-	$USERS[$login]['banned'] = true;
+	$USERS[$login]['banned'] = false;
 	header("HTTP/1.1 302 Redirect");
-	header("Location: /arh.php");}
+	header("Location: /admin.php");
+}
 else{
 	header("HTTP/1.1 403 Deny");
 ?>
@@ -25,6 +26,6 @@ else{
 
 <?
 }
-require_once('php/uninit.php');
+require_once('../php/uninit.php');
 
 ?>

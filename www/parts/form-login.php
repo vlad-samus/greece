@@ -1,7 +1,7 @@
 <?php
 	if(empty($USER)){
 ?>
-<form method="post" action="/login.php" class="login">
+<form method="post" action="/actions/login.php" class="login">
 	<dl>
 		<dt>Логін:</dt>
 		<dd><input required="required" name="login" size="16" type="text" placeholder="Логін" ></dd>
@@ -15,6 +15,6 @@
 <?
 	}
 	else{
-		include('parts/tool-bar.php');
+		include('tool-bar.php');
 	}
 ?>

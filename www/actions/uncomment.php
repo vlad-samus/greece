@@ -1,6 +1,6 @@
 <?php
 
-require_once('php/init.php');
+require_once('../php/init.php');
 $comment = @strtolower($_GET['comment']);
 $comments = commentsImport($fileCommentsBase);
 if(!empty($USER) &&
@@ -12,7 +12,8 @@ if(!empty($USER) &&
 	unset($comments[$comment]);
 	commentsExport($fileCommentsBase, $comments);
 	header("HTTP/1.1 302 Redirect");
-	header("Location: /arh.php");}
+	header("Location: /arh.php");
+}
 else{
 	header("HTTP/1.1 403 Deny");
 ?>
@@ -27,6 +28,6 @@ else{
 
 <?
 }
-require_once('php/uninit.php');
+require_once('../php/uninit.php');
 
 ?>
