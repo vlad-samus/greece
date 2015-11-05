@@ -3,7 +3,7 @@
 if(empty($USER)){
 ?>
 
-<form method="post" action="/reg.php" class="reg">	
+<form method="post" action="/actions/reg.php" class="reg">	
 	<dl>
 		<dt>Ім'я*:</dt>
 		<dd><input type="text" name="name" value="" size="20" required="required" ></dd>

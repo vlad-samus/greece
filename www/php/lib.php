@@ -29,7 +29,7 @@ function userData($data){
 		'information' => @$data['information'],
 		'accept' => @$data['accept']
 	);
-}
+};
 
 
 
@@ -44,6 +44,5 @@ function commentsImport($path){
 	else $comments = [];
 	return $comments;
 };
-
 
 ?>

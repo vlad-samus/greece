@@ -1,6 +1,6 @@
 <?php
 
-require_once('php/init.php');
+require_once('../php/init.php');
 $data = @strtolower($_POST['data']);
 if(!empty($USER) &&
 	!empty($data))
@@ -30,6 +30,6 @@ else{
 
 <?
 }
-require_once('php/uninit.php');
+require_once('../php/uninit.php');
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-require_once('php/init.php');
+require_once('../php/init.php');
 $login = @strtolower($_POST['login']);
 $password = @$_POST['password'];
 if(empty($USER) &&
@@ -28,5 +28,5 @@ else{
 
 <?
 }
-require_once('php/uninit.php');
+require_once('../php/uninit.php');
 ?>
