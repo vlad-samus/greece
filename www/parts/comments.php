@@ -24,8 +24,11 @@ $comments = commentsImport($fileCommentsBase);
 $page = intval(@$_GET['page']);
 $per_page = 10;
 $data_count = count($comments);
-for ($index=$page*$per_page; $index<min(($page+1)*$per_page,$data_count); $index++){ 
-	$comment = $comments[$index];
+$i = -1;
+foreach($comments as $index => $comment){
+	$i++;
+	if($i<$page*$per_page) continue;
+	if($i>=min(($page+1)*$per_page,$data_count)) break;
 ?>
 <div class="comment">
 	<span class="index"><?=$index+1; ?></span>
@@ -48,10 +51,14 @@ for ($index=$page*$per_page; $index<min(($page+1)*$per_page,$data_count); $index
 ?>
 
 </div>
-<div class="pages">
 
 <?
 }
+?>
+
+<div class="pages">
+
+<?
 for ($index=0; $index<ceil($data_count/$per_page); $index++){ 
 ?>
 
