@@ -45,4 +45,22 @@ function commentsImport($path){
 	return $comments;
 };
 
+function commentShown($comment){
+	global $USERS;
+	$result = false;
+	if(empty($comment)){
+		$result = false;
+	}
+	else if($USERS[$comment['user']]['admin']==true){
+		$result = true;
+	}
+	else if(!empty($comment['moderated'])){
+		$result = true;
+	}
+	else{
+		$result = false;
+	}
+	return $result;
+};
+
 ?>

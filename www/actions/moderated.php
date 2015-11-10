@@ -8,8 +8,7 @@ if(!empty($USER) &&
 	($USERS[$USER]['admin']==true) &&
 	array_key_exists($comment, $comments))
 {
-	$comments[$comment] = null;
-	unset($comments[$comment]);
+	$comments[$comment]['moderated'] = $USER;
 	commentsExport($fileCommentsBase, $comments);
 	header("HTTP/1.1 302 Redirect");
 	header("Location: /arh.php");

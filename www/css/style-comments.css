@@ -1,4 +1,10 @@
 
+div.comment-add{
+	margin-top: 32px;	
+}
+div.comments{
+	margin-top: 32px;
+}
 div.comment{
 }
 div.comment span.index{
@@ -9,7 +15,12 @@ div.comment span.date{
 }
 div.comment span.data{
 }
+div.comment span.moderated{
+	display: none;
+}
 div.comment span.bann{
+}
+div.comment span.moderate{
 }
 div.comment span.uncomment{
 }

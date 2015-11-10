@@ -122,8 +122,21 @@ div.image.left img, div.image.right img{
 }
 
 div.pages{
-	
+	border: 1px dotted gray;
+	margin-top: 32px; 
+	padding: 4px 16px 8px;
 }
 div.pages a{
+	font-weight: bold;
+	font-family: monospace;
 	color: red;
+}
+div.pages a:hover{
+	color: blue;
+}
+div.pages span:after{
+	content: " | ";
+}
+div.pages span:last-child:after{
+	content: "";
 }
