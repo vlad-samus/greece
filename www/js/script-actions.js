@@ -8,6 +8,7 @@ var actionLogin = function(){
 };
 
 
+
 /*
 actionRegistration();
 actionLogout();
