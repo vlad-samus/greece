@@ -1,0 +1,17 @@
+
+<div class="comment-view" id="comment-<?=@$_comment['id']; ?>">
+	<span class="index">     <?=@$_comment['index']; ?> </span>
+	<span class="user">      <?=@$_comment['user']; ?> </span>
+	<span class="date">      <?=@$_comment['date']; ?> </span>
+	<span class="data">      <?=@$_comment['data']; ?> </span>
+	<span class="moderated"> <?=@$_comment['moderated'] ? 'moderated' : 'not moderated'; ?> </span>
+	<span class="bann <?=@$_comment['bann'] ? '' : 'hide'; ?>">
+		<a href="/action?action=bann&login=<?=@$_comment['user']; ?>">bann user</a>
+	</span>
+	<span class="moderate <?=@$_comment['moderate'] ? '' : 'hide'; ?>">
+		<a href="/action?action=moderate&comment=<?=@$_comment['id']; ?>">moderate</a>
+	</span>
+	<span class="uncomment <?=@$_comment['uncomment'] ? '' : 'hide'; ?>">
+		<a href="/action?action=uncomment&comment=<?=@$_comment['id']; ?>">del comment</a>
+	</span>
+</div>

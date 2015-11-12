@@ -68,6 +68,10 @@ ul, li{
 	list-style-type: none;   
 }
 
+.hide{
+	display: none;
+}
+
 #menu{
 	display: block;
 	position: absolute;
@@ -94,6 +98,10 @@ ul, li{
 #menu > li:hover > ul{
 	display: block;
 	width: 200px;
+}
+
+div#user-bar{
+	position: relative;
 }
 
 div.noimage{
@@ -134,9 +142,9 @@ div.pages a{
 div.pages a:hover{
 	color: blue;
 }
-div.pages span:after{
-	content: " | ";
-}
-div.pages span:last-child:after{
-	content: "";
+
+div#toolbar{
+	float: right;
+	margin: 4px 16px 0 0;
+	text-align: right;
 }

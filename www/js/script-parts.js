@@ -1,0 +1,3 @@
+var toolBar = function (argument) {
+	// body...
+};

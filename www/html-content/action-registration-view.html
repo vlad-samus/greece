@@ -1,0 +1,23 @@
+
+<div id="registration-view">
+	<dl>
+		<dt> Login: </dt>
+		<dd> <span class="login">    <?=@$_user['login']; ?> </span> </dd>
+		<dt> E-mail: </dt>
+		<dd> <span class="email">    <?=@$_user['email']; ?> </span> </dd>
+		<dt> Role: </dt>
+		<dd> <span class="admin">    <?=@$_user['admin'] ? 'admin' : 'user'; ?> </span> </dd>
+		<dt> Status: </dt>
+		<dd> <span class="banned">   <?=@$_user['banned'] ? 'banned' : 'not banned'; ?> </span> </dd>
+		<dt> Name: </dt>
+		<dd> <span class="name">     <?=@$_user['name']; ?> </span> </dd>
+		<dt> Birthday: </dt>
+		<dd> <span class="birthday"> <?=@$_user['birthday']; ?> </span> </dd>
+		<dt> Sex: </dt>
+		<dd> <span class="sex">      <?=@$_user['sex']=='m' ? 'male' : $user['sex']=='f' ? 'female' : 'none'; ?> </span> </dd>
+		<dt> Country: </dt>
+		<dd> <span class="country">  <?=@$_user['country']; ?> </span> </dd>
+		<dt> Info: </dt>
+		<dd> <span class="info">     <?=@$_user['info']; ?> </span> </dd>
+	</dl>
+</div>

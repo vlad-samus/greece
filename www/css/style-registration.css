@@ -1,0 +1,44 @@
+
+div#registration-add form dl{
+	margin: 0 auto 4px;
+	width: 600px;
+}
+div#registration-add form dt{
+	clear: left;
+	float: left;
+	line-height: 200%;
+	text-align: right;
+	width: 49%;
+}
+div#registration-add form dd{
+	margin-left: 50%;
+	line-height: 200%;
+	position: relative;
+}
+div#registration-add form div{
+	clear: left;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+div#registration-view span.login{
+}
+div#registration-view span.email{
+}
+div#registration-view span.admin{
+}
+div#registration-view span.banned{
+}
+div#registration-view span.name{
+}
+div#registration-view span.date{
+}
+div#registration-view span.sex{
+}
+div#registration-view span.country{
+}
+div#registration-view span.information{
+}
+div#registration-view span.accept{
+}
+
