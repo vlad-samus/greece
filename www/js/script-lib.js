@@ -4,26 +4,61 @@ var typeOf = function(obj, value){
 	return (value==undefined) ? result : (result==value);
 };
 
-var setLocalStorageData = function(data){
+var LSsave = function(name, data){
 	data = JSON.stringify(data);
-	localStorage.setItem('greece', data);
+	localStorage.setItem(name, data);
 };
 
-var getLocalStorageData = function(){
-	var data = localStorage.getItem('greece');
+var LSload = function(name, def){
+	var data = localStorage.getItem(name);
+	if(data==undefined) return def;
+	if(data==null) return def;
 	try{
-		data = JSON.parse(data);
-		if(!typeOf(data, 'object')) throw '';
-		if(!typeOf(data.users, 'array')) data.users = [];
-		if(!typeOf(data.comments, 'array')) data.users = [];
+		return JSON.parse(data);
 	}
 	catch(e){
-		return {
-			users: [],
-			comments: []
-		};
+		return def;
 	}
 };
+
+var LSsaveUsers = function(data){
+	if(!typeOf(data, 'array')) return;
+	LSsave('users', data.filter(function(v){ return v['login']!='root';}));
+};
+
+var LSloadUsers = function(){
+	var data = LSload('users', []);
+	data.push({
+		login: 'root',
+		pass: '1',
+		admin: true,
+		banned: false,
+		name: 'root',
+		email: 'root@localhost',
+		birthday: '0000-00-00',
+		sex: '',
+		country: 'uk',
+		info: ''
+	});
+	return data;
+};
+
+var LSsaveMe = function(me){
+	return LSsave('me', me);
+};
+
+var LSloadMe = function(){
+	return LSload('me', undefined)
+};
+
+var LSsaveComments = function(comments){
+	return LSsave('comments', comments);
+};
+
+var LSloadComments = function(){
+	return LSload('comments', []);
+};
+
 
 var buildUserObject = function(login, password, admin, banned, name, email, birthday, sex, country, info){
 	// login

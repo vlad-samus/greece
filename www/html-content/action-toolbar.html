@@ -1,6 +1,6 @@
 
 <div id="toolbar" class="<?=@$_user['logined'] ? '' : 'hide'; ?>">
-	Hello, <?=@$_user['login']; ?> 
+	Hello, <span class="login"> <?=@$_user['login']; ?> </span>
 	<span class="admin <?=@$_user['admin'] ? '' : 'hide'; ?>">| <a href="/admin">admin</a></span>
 	<span class="logout">| <a href="/action?action=logout">logout</a></span>
 </div>

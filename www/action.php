@@ -119,7 +119,7 @@ elseif(count($_GET)>0 && $_GET['action']=='moderate'){
 		header(sprintf('Location: %s', $url));
 	}
 }
-elseif(count($_GET)>0 && $_GET['action']=='comment'){
+elseif(count($_POST)>0 && $_POST['action']=='comment'){
 	$data = @$_POST['data'];
 	if(!empty($USER) &&
 		!empty($data))

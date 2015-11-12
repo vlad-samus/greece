@@ -1,26 +1,28 @@
-div.admin{
+div.users{
 }
-div.admin span.login{
+div.users div.user{
 }
-div.admin span.password{
+div.users div.user span.login{
 }
-div.admin span.email{
+div.users div.user span.password{
 }
-div.admin span.admin{
+div.users div.user span.email{
 }
-div.admin span.banned{
+div.users div.user span.admin{
 }
-div.admin span.name{
+div.users div.user span.banned{
 }
-div.admin span.birthday{
+div.users div.user span.name{
 }
-div.admin span.sex{
+div.users div.user span.birthday{
 }
-div.admin span.country{
+div.users div.user span.sex{
 }
-div.admin span.info{
+div.users div.user span.country{
 }
-div.admin span.bann{
+div.users div.user span.info{
 }
-div.admin span.unbann{
+div.users div.user span.bann{
+}
+div.users div.user span.unbann{
 }

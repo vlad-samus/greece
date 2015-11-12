@@ -26,10 +26,10 @@ $do = '/' . @$_GET['do'];
 	<link type"text/css" rel="stylesheet" href="/css/style-comments.css" >
 	<link type"text/css" rel="stylesheet" href="/css/style-admin.css" >
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/script.js"></script>
 	<script type="text/javascript" src="/js/script-lib.js"></script>
 	<script type="text/javascript" src="/js/script-actions.js"></script>
-	<script type="text/javascript" src="/js/script-parts.js"></script>
+	<script type="text/javascript" src="/js/script-content.js"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
 </head>
 
 <body>
@@ -81,6 +81,7 @@ if(array_key_exists($do, $DO)){
 }
 elseif($do=='/admin'){
 	if(!empty($USER) && !$USER['banned'] && $USER['admin']){
+		print('<div class="users">');
 		foreach ($USERS as $login => $user){
 			if($login=='root') continue;
 			$file = 'html-content/action-admin.html';
@@ -91,6 +92,7 @@ elseif($do=='/admin'){
 			ob_end_clean();
 			print($content);
 		}
+		print('</div>');
 		print('<hr>');
 	}
 	// action-comment-view.html	
