@@ -1,15 +1,26 @@
 
-div.comment{
+div#comment-add{
+	margin-top: 32px;	
 }
-div.comment span.index{
+div.comments{
+	margin-top: 32px;
 }
-div.comment span.user{
+div.comments div.comment-view{
 }
-div.comment span.date{
+div.comments div.comment-view span.index{
 }
-div.comment span.data{
+div.comments div.comment-view span.user{
 }
-div.comment span.bann{
+div.comments div.comment-view span.date{
 }
-div.comment span.uncomment{
+div.comments div.comment-view span.data{
+}
+div.comments div.comment-view span.moderated{
+	display: none;
+}
+div.comments div.comment-view span.bann{
+}
+div.comments div.comment-view span.moderate{
+}
+div.comments div.comment-view span.uncomment{
 }

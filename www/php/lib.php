@@ -9,26 +9,20 @@ function usersImport($path){
 	if(file_exists($path)){
 		$users = unserialize(file_get_contents($path));
 		$users['root'] = array(
+			'login' => 'root',
 			'pass' => '1',
-			'email' => '',
+			'email' => 'root@localhost',
 			'admin' => true,
 			'banned' => false,
-			'data' => userData(array())
+			'name' => 'root',
+			'birthday' => '0000-00-00',
+			'sex' => '',
+			'country' => 'uk',
+			'info' => 'root info'
 		);		
 	}
 	else $users = array();
 	return $users;
-};
-
-function userData($data){
-	return array(
-		'name' => @$data['name'],
-		'date' => @$data['date'],
-		'sex' => @$data['sex'],
-		'country' => @$data['country'],
-		'information' => @$data['information'],
-		'accept' => @$data['accept']
-	);
 };
 
 
@@ -43,6 +37,17 @@ function commentsImport($path){
 	}
 	else $comments = array();
 	return $comments;
+};
+
+function commentShown($comment, $showAdmin = true){
+	if(!is_array($comment)) return false;
+	elseif($comment['moderated']==true) return true;
+	elseif($showAdmin){
+		$user = $comment['user'];
+		global $USERS;
+		return $USERS[$user]['admin']==true;
+	}
+	return false;
 };
 
 ?>

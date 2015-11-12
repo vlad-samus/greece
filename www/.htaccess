@@ -1,2 +1,31 @@
+
 RedirectMatch  ^/parts/.*$  /
 RedirectMatch  ^/php/.*$  /
+
+RewriteEngine  On
+RewriteBase  /
+
+RewriteRule  ^.*?[\.](css)$  -  [L]
+RewriteRule  ^.*?[\.](js)$  -  [L]
+RewriteRule  ^.*?[\.](jpe?g|gif|png)$  -  [L]
+
+RewriteCond  %{REDIRECT_STATUS}  !^$
+RewriteRule  .*  -  [L]
+
+
+#RewriteCond  %{REDIRECT_STATUS}  ^$
+#RewriteRule  (.*?[\/][^\/\.]*)$  xindex.php?do=$1  [L]
+
+#RewriteCond  %{REDIRECT_STATUS}  ^$
+#RewriteRule  ^.*?[\.](php|html)$  -  [F, L]
+
+#RewriteCond  %{REDIRECT_STATUS}  ^$
+#RewriteRule  .*  -  [F, L]
+
+
+RewriteCond  %{REQUEST_URI}  ^[\/]?(?:index|action)[\.]php
+RewriteRule  ^(.*)$  -  [L]
+
+RewriteRule  ^action$  action.php?%{QUERY_STRING}  [L]
+
+RewriteRule  (.*)  index.php?do=$1&%{QUERY_STRING}  [L]

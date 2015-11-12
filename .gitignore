@@ -47,3 +47,5 @@ access-www.l.log
 error-www.l.log
 
 rewrite-www.l.log
+
+www/~old

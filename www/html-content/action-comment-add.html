@@ -1,0 +1,20 @@
+
+<script type="text/javascript">
+	function check(){
+		var textarea = document.getElementById('comment');
+		var text = textarea.innerHTML;
+		if (text.match('(?:^|[\s])xxx(?:[\s]|$)')){
+			alert('!!!');
+			return false;
+		}
+		return true;
+	}
+</script>
+
+<div id="comment-add">
+	<form method="post" action="/action" onsubmit="return check();">
+		<input name="action" type="hidden" value="comment-add" >
+		<textarea name="data" id="comment"></textarea>
+		<input type="submit" value=" Send ">
+	</form>
+</div>

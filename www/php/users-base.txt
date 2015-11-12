@@ -1,1 +1,1 @@
-a:1:{s:1:"a";a:5:{s:4:"pass";s:1:"a";s:5:"email";s:6:"a@a.ua";s:5:"admin";b:0;s:6:"banned";b:0;s:4:"data";a:6:{s:4:"name";s:1:"a";s:4:"date";s:10:"1234-11-12";s:3:"sex";s:1:"m";s:7:"country";s:2:"ua";s:11:"information";s:4:" dsd";s:6:"accept";s:2:"on";}}}
+a:1:{s:1:"a";a:10:{s:5:"login";s:1:"a";s:4:"pass";s:1:"a";s:5:"email";s:6:"a@a.ua";s:5:"admin";b:0;s:6:"banned";b:0;s:4:"name";s:1:"a";s:8:"birthday";s:10:"0099-09-09";s:3:"sex";s:1:"m";s:7:"country";s:2:"ua";s:4:"info";s:1:"9";}}
