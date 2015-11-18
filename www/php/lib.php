@@ -16,7 +16,7 @@ function usersImport($path){
 			'banned' => false,
 			'name' => 'root',
 			'birthday' => '0000-00-00',
-			'sex' => '',
+			'sex' => 'f',
 			'country' => 'uk',
 			'info' => 'root info'
 		);		
