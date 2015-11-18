@@ -2,6 +2,9 @@ div.users{
 }
 div.users div.user{
 }
+div.users div.user span{
+	padding: 0 2px;
+}
 div.users div.user span.login{
 }
 div.users div.user span.password{

@@ -7,6 +7,9 @@ div.comments{
 }
 div.comments div.comment-view{
 }
+div.comments div.comment-view span{
+	padding: 0 2px;
+}
 div.comments div.comment-view span.index{
 }
 div.comments div.comment-view span.user{
@@ -16,7 +19,7 @@ div.comments div.comment-view span.date{
 div.comments div.comment-view span.data{
 }
 div.comments div.comment-view span.moderated{
-	display: none;
+	/*display: none;*/
 }
 div.comments div.comment-view span.bann{
 }

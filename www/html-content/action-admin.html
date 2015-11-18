@@ -1,15 +1,15 @@
 
 <div class="user">
-	<span class="login"> <?=@$_user['login']; ?> </span>
-	<span class="password"> <?=@$_user['pass']; ?> </span>
-	<span class="email"> <?=@$_user['email']; ?> </span>
-	<span class="admin"> <?=@$_user['admin'] ? 'admin' : 'user'; ?> </span>
-	<span class="banned"> <?=@$_user['banned'] ? 'banned' : 'not banned'; ?> </span>
-	<span class="name"> <?=@$_user['name']; ?> </span>
-	<span class="birthday"> <?=@$_user['birthday']; ?> </span>
-	<span class="sex"> <?=@$_user['sex']=='m' ? 'male' : @$_user['sex']=='f' ? 'female' : 'none'; ?> </span>
-	<span class="country"> <?=@$_user['country']; ?> </span>
-	<span class="info"> <?=@$_user['info']; ?> </span>
+	<span class="login"><?=@$_user['login']; ?></span>
+	<span class="password"><?=@$_user['pass']; ?></span>
+	<span class="email"><?=@$_user['email']; ?></span>
+	<span class="admin"><?=@$_user['admin'] ? 'admin' : 'user'; ?></span>
+	<span class="banned"><?=@$_user['banned'] ? 'banned' : 'not banned'; ?></span>
+	<span class="name"><?=@$_user['name']; ?></span>
+	<span class="birthday"><?=@$_user['birthday']; ?></span>
+	<span class="sex"><?=@$_user['sex']=='m' ? 'male' : @$_user['sex']=='f' ? 'female' : 'none'; ?></span>
+	<span class="country"><?=@$_user['country']; ?></span>
+	<span class="info"><?=@$_user['info']; ?></span>
 	<span class="bann"><a href="/action?action=bann&login=<?=$_user['login']; ?>">bann user</a></span>
 	<span class="unbann"><a href="/action?action=unbann&login=<?=$_user['login']; ?>">unbann user</a></span>
 </div>
