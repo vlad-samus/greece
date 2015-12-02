@@ -103,10 +103,45 @@ var setupFill = function(){
 	$('div.pages').css('display', 'block');
 };
 
+var setupAjax = function(){
+	// user: login
+	$('#login form').attr('action', '#');
+	$('#login form').on('submit', function(){ ajaxLogin(); return false; });
+
+	// user: toolbar
+	$('#toolbar span.logout a').attr('href', '#');
+	$('#toolbar span.logout a').on('click', function(){ ajaxLogout(); return false; });
+
+	// user: registration
+	//$('#registration-add form').attr('action', '#');
+	//$('#registration-add form').on('submit', function(){ ajaxRegistration(); return false; });
+
+	// admin: users list
+	//$('div.users').css('display', 'none');
+	//$('div.users').empty();
+	$('div.users div.user span.bann a').each(function(index, element){
+		$(element).attr('href', '#');
+		$(element).on('click', function(){ ajaxUserBann(element, index); return false; });
+	});
+	$('div.users div.user span.unbann a').each(function(index, element){
+		$(element).attr('href', '#');
+		$(element).on('click', function(){ ajaxUserUnbann(element, index); return false; });
+	});
+
+	// comment: add
+	//$('#comment-add form').attr('action', '#');
+	//$('#comment-add form').on('submit', function(){ ajaxCommentAdd(); return false; });
+
+	// comment: view + pages
+	//$('div.comments').css('display', 'none');
+	//$('div.comments').empty();
+	//$('div.pages').css('display', 'none');
+	//$('div.pages').empty();
+};
+
 $(document).ready(function (){
 	//return ;
-	setupClean();
-	setTimeout(function(){
-		setupFill();
-	}, 50);
+	setupAjax();
+	//setupClean();
+	//setTimeout(function(){ setupFill(); }, 50);
 });

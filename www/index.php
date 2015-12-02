@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ignore_user_abort(true);
 set_time_limit(0);
@@ -25,9 +25,11 @@ $do = '/' . @$_GET['do'];
 	<link type"text/css" rel="stylesheet" href="/css/style-section.css" >
 	<link type"text/css" rel="stylesheet" href="/css/style-comments.css" >
 	<link type"text/css" rel="stylesheet" href="/css/style-admin.css" >
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!--script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+	<script type="text/javascript" src="/js/jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="/js/script-lib.js"></script>
 	<script type="text/javascript" src="/js/script-actions.js"></script>
+	<script type="text/javascript" src="/js/script-ajax-actions.js"></script>
 	<script type="text/javascript" src="/js/script-content.js"></script>
 	<script type="text/javascript" src="/js/script.js"></script>
 </head>
@@ -78,6 +80,9 @@ if(array_key_exists($do, $DO)){
 	$file = 'html-content/' . $DO[$do];
 	$content = file_get_contents($file);
 	print($content);
+}
+elseif($do=='/ajax'){
+	print('ajax');
 }
 elseif($do=='/admin'){
 	if(!empty($USER) && !$USER['banned'] && $USER['admin']){
@@ -257,7 +262,7 @@ elseif($do=='/registration'){
 	</header>
 
 	<footer>
-		© Copyright @ 2015  Vladislav Samusenko. Kyiv. NTUU "KPI"
+		© Copyright @ 2015  Vladislav Samusenko. Kyiv. <a href="http://kpi.ua" onclick="alert(1); return false;">NTUU "KPI"</a>
 	</footer>
 </body>
 
