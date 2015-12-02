@@ -14,7 +14,7 @@ RewriteRule  .*  -  [L]
 
 
 #RewriteCond  %{REDIRECT_STATUS}  ^$
-#RewriteRule  (.*?[\/][^\/\.]*)$  xindex.php?do=$1  [L]
+#RewriteRule  (.*?[\/][^\/\.]*)$  index.php?do=$1  [L]
 
 #RewriteCond  %{REDIRECT_STATUS}  ^$
 #RewriteRule  ^.*?[\.](php|html)$  -  [F, L]
@@ -23,7 +23,7 @@ RewriteRule  .*  -  [L]
 #RewriteRule  .*  -  [F, L]
 
 
-RewriteCond  %{REQUEST_URI}  ^[\/]?(?:index|action)[\.]php
+RewriteCond  %{REQUEST_URI}  ^[\/]?(?:index|action|ajax)[\.]php
 RewriteRule  ^(.*)$  -  [L]
 
 RewriteRule  ^action$  action.php?%{QUERY_STRING}  [L]
