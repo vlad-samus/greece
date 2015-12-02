@@ -2,13 +2,27 @@
 div#comment-add{
 	margin-top: 32px;	
 }
+div#comment-add textarea{
+	background-color: transparent;
+	border: 1px dooted #999;
+
+}
+div.comments:before{
+	content: "Comments:"
+}
 div.comments{
-	margin-top: 32px;
+  margin-top: 32px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #FFDAB9; 
+	padding: 10px;
+	border: 1px solid grey;
+  border-radius: 30px; 	
 }
 div.comments div.comment-view{
 }
 div.comments div.comment-view span{
-	padding: 0 2px;
+	padding: 0 3px;
 }
 div.comments div.comment-view span.index{
 }
@@ -16,7 +30,14 @@ div.comments div.comment-view span.user{
 }
 div.comments div.comment-view span.date{
 }
+
+div.comments div.comment-view span.data:before{
+	content: " | "
+}
 div.comments div.comment-view span.data{
+}
+div.comments div.comment-view span.moderated:before{
+	content: " | "
 }
 div.comments div.comment-view span.moderated{
 	/*display: none;*/

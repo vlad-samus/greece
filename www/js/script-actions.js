@@ -67,7 +67,7 @@ var doAdminUsers = function(){
 		userD.aunbann.appendTo(userD.unbann);
 		// fill
 		userD.login.html(user.login);
-		userD.password.html(user.password);
+		userD.password.html(user.pass);
 		userD.email.html(user.email);
 		userD.admin.html(user.admin ? 'admin' : 'user');
 		userD.banned.html(user.banned ? 'banned' : 'not banned');
@@ -80,9 +80,11 @@ var doAdminUsers = function(){
 		userD.abann.click(function(){ actionBann(user.login); return false; });
 		userD.aunbann.click(function(){ actionUnbann(user.login); return false; });
 	};
-	LSloadUsers().filter(function(user){
+	var users = LSloadUsers()
+	users = users.filter(function(user){
 		return !user.login.match(/^root$/i);
-	}).forEach(function(user){
+	});
+	users.forEach(function(user){
 		doAdminUser(user);
 	});
 };
