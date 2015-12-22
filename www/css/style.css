@@ -52,7 +52,7 @@ footer{
 	bottom: 0px;
 	height: 16px;
 	opacity: 0.80;
-	padding: 8px;
+	padding: 8px 0;
 	position: absolute;
 	text-align: center;
 	width: 100%;
