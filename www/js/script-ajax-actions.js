@@ -21,7 +21,7 @@ var ajaxLogin = function(){
 			}
 		},
 		type: 'POST',
-		url: '/ajax'
+		url: '/ajax.php'
 	});
 };
 
@@ -40,7 +40,7 @@ var ajaxLogout = function(){
 			}
 		},
 		type: 'POST',
-		url: '/ajax'
+		url: '/ajax.php'
 	});
 };
 
@@ -74,7 +74,7 @@ var ajaxUserBann = function(a, i){
 			}
 		},
 		type: 'POST',
-		url: '/ajax'
+		url: '/ajax.php'
 	});
 };
 
@@ -108,7 +108,7 @@ var ajaxUserUnbann = function(a, i){
 			}
 		},
 		type: 'POST',
-		url: '/ajax'
+		url: '/ajax.php'
 	});
 };
 
