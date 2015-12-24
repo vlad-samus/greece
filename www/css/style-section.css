@@ -1,10 +1,8 @@
 
 #section1{
-	background: #F1FFDF;
-	border-radius: 32px;
+	display: block;
 	margin: 16px;
 	min-height: 200px;
-	opacity: 0.95;
 	overflow: hidden;
 	padding: 32px;
 	position: relative;
@@ -12,6 +10,22 @@
 
 #section1 div.arrows{
 	text-align: center;
+}
+
+#section1 div.paper{
+	background-color: #F1FFDF;
+	border-radius: 32px;
+	display: hidden;
+	opacity: 0.95;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+#section1 div.paper-inner{
+	position: relative;
 }
 
 h2{

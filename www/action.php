@@ -6,10 +6,25 @@ session_start();
 require_once('php/lib.php');
 $fileUsersBase = $_SERVER['DOCUMENT_ROOT'] . '/php/users-base.txt';
 $fileCommentsBase = $_SERVER['DOCUMENT_ROOT'] . '/php/comments-base.txt';
+$fileRecoversBase = $_SERVER['DOCUMENT_ROOT'] . '/php/recovers-base.txt';
 $USER = @$_SESSION['user'];
 $USERS = usersImport($fileUsersBase);
 $USER = @$USERS[$USER];
 $url = empty($_SERVER['HTTP_REFERER']) ? '/' : preg_replace('/^(?:.*?[\:][\/]{2})?[^\/]+([\/].*)$/', '$1', $_SERVER['HTTP_REFERER']);
+
+$_url = null;
+function error_redirect(){
+	header("HTTP/1.1 403 Deny");
+	$file = 'html-content/action-redirect.html';
+	ob_start();
+	global $_url;
+	global $url;
+	$_url = $url;
+	include($file);
+	$content = ob_get_clean();
+	ob_end_clean();
+	print($content);	
+};
 
 if(count($_POST)>0 && $_POST['action']=='registration'){
 	$login = trim(strtolower(@$_POST['login']));
@@ -58,6 +73,9 @@ if(count($_POST)>0 && $_POST['action']=='registration'){
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
 	}
+	else{
+		error_redirect();
+	}
 }
 elseif(count($_POST)>0 && $_POST['action']=='login'){
 	$login = @strtolower($_POST['login']);
@@ -72,6 +90,9 @@ elseif(count($_POST)>0 && $_POST['action']=='login'){
 		$_SESSION['user'] = $login;
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
+	}
+	else{
+		error_redirect();
 	}
 }
 elseif(count($_GET)>0 && $_GET['action']=='logout'){
@@ -91,6 +112,9 @@ elseif(count($_GET)>0 && $_GET['action']=='bann'){
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
 	}
+	else{
+		error_redirect();
+	}
 }
 elseif(count($_GET)>0 && $_GET['action']=='unbann'){
 	$login = @strtolower($_GET['login']);
@@ -103,6 +127,9 @@ elseif(count($_GET)>0 && $_GET['action']=='unbann'){
 		$USERS[$login]['banned'] = false;
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
+	}
+	else{
+		error_redirect();
 	}
 }
 elseif(count($_GET)>0 && $_GET['action']=='moderate'){
@@ -117,6 +144,9 @@ elseif(count($_GET)>0 && $_GET['action']=='moderate'){
 		commentsExport($fileCommentsBase, $comments);
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
+	}
+	else{
+		error_redirect();
 	}
 }
 elseif(count($_POST)>0 && $_POST['action']=='comment-add'){
@@ -137,6 +167,9 @@ elseif(count($_POST)>0 && $_POST['action']=='comment-add'){
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
 	}
+	else{
+		error_redirect();
+	}
 }
 elseif(count($_GET)>0 && $_GET['action']=='uncomment'){
 	$comment = @$_GET['comment'];
@@ -152,16 +185,47 @@ elseif(count($_GET)>0 && $_GET['action']=='uncomment'){
 		header("HTTP/1.1 302 Redirect");
 		header(sprintf('Location: %s', $url));
 	}
+	else{
+		error_redirect();
+	}
+}
+elseif(count($_POST)>0 && $_POST['action']=='recover'){
+	$email = @$_POST['email'];
+	$password = @$_POST['password'];
+	$password2 = @$_POST['password2'];
+	function emailU($v){
+		global $email;	
+		return $v['email']==$email;
+	};
+	if(empty($USER) &&
+		!empty($email) &&
+		!empty($password) &&
+		!empty($password2) &&
+		($password==$password2) &&
+		(count(array_filter($USERS, emailU))==1))
+	{
+		$recovers = recoversImport($fileRecoversBase);
+		$recoverId = uniqid();
+		$recover = array(
+				'email' => $email,
+				'password' => $password
+			);
+		$recovers[$recoverId] = $recover;
+		recoversExport($fileRecoversBase, $recovers);
+		$mailTo = sprintf('<%s>', $email);
+		$mailSubject = sprintf('Password recover.');
+		$mailMessage = sprintf('<a href="//greece/recover/%s">recover</a>', $recoverId);
+		$mailHeaders = 'From: webmaster@greece' . "\r\n" . 'Reply-To: webmaster@greece' . "\r\n";
+		mail($mailTo, $mailSubject, $mailMessage, $mailHeaders);
+		header("HTTP/1.1 302 Redirect");
+		header(sprintf('Location: %s', $url));
+	}
+	else{
+		error_redirect();
+	}
 }
 else{
-	header("HTTP/1.1 403 Deny");
-	$file = 'html-content/action-redirect.html';
-	ob_start();
-	$_url = $url;
-	include($file);
-	$content = ob_get_clean();
-	ob_end_clean();
-	print($content);	
+	error_redirect();
 }
 
 usersExport($fileUsersBase, $USERS);
