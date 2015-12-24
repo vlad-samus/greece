@@ -1,31 +1,77 @@
-div.users{
+div.users:before{
+	content: "Users data:"
+}
+div.users{ 
+  margin-top: 32px;
+	margin-left: 10px;
+	margin-right: 10px;
+	background-color: #FFDAB9; 
+	padding: 10px;
+	border: 1px solid grey;
+  border-radius: 30px;
 }
 div.users div.user{
+ 
 }
 div.users div.user span{
 	padding: 0 2px;
 }
+div.users div.user span.login:before{
+	content: "Login:"
+}
 div.users div.user span.login{
+}
+div.users div.user span.password:before{
+	content: " | Password:" 
 }
 div.users div.user span.password{
 }
+div.users div.user span.email:before{
+	content: " | Email:"
+}
 div.users div.user span.email{
+}
+div.users div.user span.admin:before{
+	content: " | "
 }
 div.users div.user span.admin{
 }
+div.users div.user span.banned:before{
+	content: " | "
+}
 div.users div.user span.banned{
+}
+div.users div.user span.name:before{
+	content: " | Name:"
 }
 div.users div.user span.name{
 }
+div.users div.user span.birthday:before{
+	content: "| Birthday:"
+}
 div.users div.user span.birthday{
+}
+div.users div.user span.sex:before{
+	content: " | Sex:"
 }
 div.users div.user span.sex{
 }
+div.users div.user span.country:before{
+	content: " | Country:"
+}
 div.users div.user span.country{
+}
+div.users div.user span.info:before{
+	content: " | Info:"{
 }
 div.users div.user span.info{
 }
+div.users div.user span.bann:before{
+	content: " | "
+}
 div.users div.user span.bann{
+}
+div.users div.user span.unbann{
 }
 div.users div.user span.unbann{
 }

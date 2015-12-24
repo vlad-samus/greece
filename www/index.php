@@ -134,8 +134,8 @@ elseif(preg_match('"[\/]recover[\/]([\w]+)"', $do, $recoverId)){
 	recoversExport($fileRecoversBase, $recovers);
 }
 elseif($do=='/admin'){
+	print('<div class="users">');
 	if(!empty($USER) && !$USER['banned'] && $USER['admin']){
-		print('<div class="users">');
 		foreach ($USERS as $login => $user){
 			if($login=='root') continue;
 			$file = 'html-content/action-admin.html';
@@ -146,9 +146,9 @@ elseif($do=='/admin'){
 			ob_end_clean();
 			print($content);
 		}
-		print('</div>');
-		print('<hr>');
 	}
+	print('</div>');
+	print('<hr>');
 	// action-comment-view.html	
 	$_admin = (!empty($USER) && !$USER['banned'] && $USER['admin']);
 	$comments = commentsImport($fileCommentsBase);
