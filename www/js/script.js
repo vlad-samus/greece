@@ -1,4 +1,8 @@
 
+var goLang = function(host){
+	location.assign('http://' + host + location.pathname);
+};
+
 var setupClean = function(){
 	// user: login
 	$('#login').css('display', 'none');

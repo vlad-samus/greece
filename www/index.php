@@ -6,6 +6,7 @@ session_start();
 require_once('php/lib.php');
 $fileUsersBase = $_SERVER['DOCUMENT_ROOT'] . '/php/users-base.txt';
 $fileCommentsBase = $_SERVER['DOCUMENT_ROOT'] . '/php/comments-base.txt';
+$fileRecoversBase = $_SERVER['DOCUMENT_ROOT'] . '/php/recovers-base.txt';
 $USER = @$_SESSION['user'];
 $USERS = usersImport($fileUsersBase);
 $USER = @$USERS[$USER];
@@ -35,7 +36,9 @@ $do = '/' . @$_GET['do'];
 </head>
 
 <body>
-	<div id="user-bar">
+	<a name="top"></a>
+	<div class="body">
+		<div id="user-bar">
 
 <?php
 if($do!='/' || !empty($USER)){
@@ -62,8 +65,16 @@ ob_end_clean();
 print($content);
 ?>
 
-	</div>
-	<section id="section1">
+		</div>
+		<section id="section1">
+
+<?php
+if($do=='/' ){
+	print('<style type="text/css"> div.paper{ display: none; } </style>');
+}
+?>
+			<div class="paper"></div>
+			<div class="paper-inner">
 
 <?php
 $DO = array(
@@ -83,6 +94,44 @@ if(array_key_exists($do, $DO)){
 }
 elseif($do=='/ajax'){
 	print('ajax');
+}
+elseif($do=='/recover'){
+//
+	if(!empty($USER)){
+		print('<style type="text/css"> div#recover{ display: none; } </style>');
+	}
+	//
+	$file = 'html-content/action-recover.html';
+	$content = file_get_contents($file);
+	print($content);
+}
+elseif(preg_match('"[\/]recover[\/]([\w]+)"', $do, $recoverId)){
+	$recoverId = $recoverId[1];
+	$recovers = recoversImport($fileRecoversBase);
+	if(is_array($recovers) && array_key_exists($recoverId, $recovers)){
+		$recoverLogin = null;
+		$recoverEmail = $recovers[$recoverId]['email'];
+		$recoverPassword = $recovers[$recoverId]['password'];
+		unset($recovers[$recoverId]);
+		foreach ($USERS as $login => $user){
+			if($user['email']!=$recoverEmail) continue;
+			$recoverLogin = $user['login'];
+			break;
+		}
+		if(!empty($recoverLogin)){
+			$USERS[$recoverLogin]['pass'] = $recoverPassword;
+			$file = 'html-content/action-recover-success.html';		
+		}
+		else{
+			$file = 'html-content/action-recover-error.html';
+		}
+	}
+	else{
+		$file = 'html-content/action-recover-error.html';
+	}
+	$content = file_get_contents($file);
+	print($content);
+	recoversExport($fileRecoversBase, $recovers);
 }
 elseif($do=='/admin'){
 	if(!empty($USER) && !$USER['banned'] && $USER['admin']){
@@ -241,30 +290,50 @@ elseif($do=='/registration'){
 }
 ?>
 
-	</section>
+			</div>
+		</section>
+		<div id="to-top" style="display: none;"><a href="#top"><img src="/img/top.png" alt="top" /></a></div>
 
-	<header>
-		<a href="/" id="logo"><img src="/img/logo.png" alt="logo" ></a>
-		<ul id="menu">
-			<li><a href="/personality">Особистості</a>
-			<ul>
-			 <li><a href="/personality#mnesikl">Мнесікл</a></li>
-			 <li><a href="/personality#iktin">Іктін</a></li>
-			 <li><a href="/personality#pasha">Каллікрат</a></li>
-			 <li><a href="/personality#fidii">Фідій</a></li>
+		<header>
+			<a href="/" id="logo"><img src="/img/logo.png" alt="logo" ></a>
+			<ul id="menu">
+				<li><a href="/personality">Особистості</a>
+				<ul>
+				 <li><a href="/personality#mnesikl">Мнесікл</a></li>
+				 <li><a href="/personality#iktin">Іктін</a></li>
+				 <li><a href="/personality#pasha">Каллікрат</a></li>
+				 <li><a href="/personality#fidii">Фідій</a></li>
+				</ul>
+				</li>
+				<li><a href="/architecture">Архітектура</a></li>
+				<li><a href="/history">Історія</a></li>
+				<li><a href="/art">Мистецтво</a></li>
+				<li><a href="/registration">Реєстрація</a></li>
 			</ul>
-			</li>
-			<li><a href="/architecture">Архітектура</a></li>
-			<li><a href="/history">Історія</a></li>
-			<li><a href="/art">Мистецтво</a></li>
-			<li><a href="/registration">Реєстрація</a></li>
-		</ul>
-	</header>
+		</header>
 
-	<footer>
-		© Copyright @ 2015  Vladislav Samusenko. Kyiv. <a href="http://kpi.ua" onclick="alert(1); return false;">NTUU "KPI"</a>
-	</footer>
+		<div class="lang">
+			<a href="#" onclick="goLang('en.greece'); return false;"><img src="/img/en1.png" /></a>
+			<a href="#" onclick="goLang('greece'); return false;"><img src="/img/ua1.png" /></a>
+		</div>
+
+		<footer>
+			© Copyright @ 2015  Vladislav Samusenko. Kyiv. <a href="http://kpi.ua" onclick="alert(1); return false;">NTUU "KPI"</a>
+		</footer>
+	</div>
 </body>
+
+<script type="text/javascript">
+	function scroll(){
+		if(window.pageYOffset) return parseInt(window.pageYOffset);
+		else if(document.documentElement.scrollTop) return parseInt(document.documentElement.scrollTop);
+		else if(document.body.scrollTop) return parseInt(document.body.scrollTop);
+		else return 0;
+	};
+	setInterval(function(){
+		document.getElementById('to-top').style.display = scroll()>100 ? 'block' : 'none';
+	}, 1000);
+</script>
 
 </html>
 

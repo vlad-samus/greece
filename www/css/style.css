@@ -12,7 +12,6 @@ body{
 	background-size: 100%;
 	color: #000;
 	font-family: "Verdana", "Helvetica", "Arial", sans-serif;
-	opacity: 0.95;
 }
 
 a#logo{
@@ -32,7 +31,7 @@ a:hover{
 	text-decoration: underline;
 }
 
-body{
+div.body{
 	padding-top: 102px;
 	padding-bottom: 32px;
 }
@@ -52,7 +51,7 @@ footer{
 	bottom: 0px;
 	height: 16px;
 	opacity: 0.80;
-	padding: 8px;
+	padding: 8px 0;
 	position: absolute;
 	text-align: center;
 	width: 100%;
@@ -109,9 +108,15 @@ div.noimage{
 }
 div.image.left, div.image.right{
 	clear: both;
-	background-color: #f29f4b; 
+	background-color: rgba(242, 159, 75, 1.0);
 	border-radius: 8px;
 	margin: 8px 16px;
+
+filter:alpha(opacity=100);
+-moz-opacity:1;
+-khtml-opacity:1;
+opacity: 1;
+	
 	padding: 12px 16px;
 	text-align: center;
 }
@@ -126,7 +131,6 @@ div.image.right{
 div.image.left img, div.image.right img{
 	display: block;
 	margin-bottom: 4px;
-	opacity: 0.9;
 }
 
 div.pages{
@@ -144,7 +148,44 @@ div.pages a:hover{
 }
 
 div#toolbar{
+	background-color: white;
+	border-radius: 8px;
 	float: right;
+	font-weight: bold;
 	margin: 4px 16px 0 0;
+	opacity: 0.5;
+	padding: 4px 8px;
 	text-align: right;
+}
+
+div#to-top{
+	padding: -1px;
+}
+div#to-top a{
+	background-color: #E0E0E0;
+	border: 1px #999999 solid;
+	border-radius: 8px;
+	margin: 0;
+	opacity: 0.6;
+	overflow: hidden;
+	padding: 0;
+	position: fixed;
+	top: 50%;
+	left: 5%;
+}
+div.lang{
+	left: 128px;
+	padding: 4px;
+	position: absolute;
+	top: 24px;
+}
+div.lang a{
+	border: 1px solid white;
+	display: inline-block;
+}
+div.lang a:hover{
+	border-color: red;
+}
+div.lang a img{
+	vertical-align: bottom;
 }

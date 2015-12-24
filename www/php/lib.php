@@ -8,6 +8,7 @@ function usersExport($path, $users){
 function usersImport($path){
 	if(file_exists($path)){
 		$users = unserialize(file_get_contents($path));
+		if(!is_array($users)) $users = array();
 		$users['root'] = array(
 			'login' => 'root',
 			'pass' => '1',
@@ -34,6 +35,7 @@ function commentsExport($path, $comments){
 function commentsImport($path){
 	if(file_exists($path)){
 		$comments = unserialize(file_get_contents($path));
+		if(!is_array($comments)) $comments = array();
 	}
 	else $comments = array();
 	return $comments;
@@ -49,5 +51,21 @@ function commentShown($comment, $showAdmin = true){
 	}
 	return false;
 };
+
+
+
+function recoversExport($path, $recovers){
+	return file_put_contents($path, serialize($recovers));
+};
+
+function recoversImport($path){
+	if(file_exists($path)){
+		$recovers = unserialize(file_get_contents($path));
+		if(!is_array($recovers)) $recovers = array();
+	}
+	else $recovers = array();
+	return $recovers;
+};
+
 
 ?>
